@@ -1,5 +1,5 @@
 export class Potter {
   price(books: number[]) {
-    return -1;
+    return books.length * 8;
   }
 }
