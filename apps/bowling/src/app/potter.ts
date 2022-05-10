@@ -27,6 +27,12 @@ export class Potter {
       if (!cnt) break;
     }
 
+    /* The combination of 4+4 is cheaper than 3+5. */
+    const comb = Math.min(titles[3], titles[5]);
+    titles[3] -= comb;
+    titles[4] += comb * 2;
+    titles[5] -= comb;
+
     for (let cnt=1; cnt<=5; cnt++) {
       while (titles[cnt as keyof Count] --> 0) {
         switch (cnt) {
