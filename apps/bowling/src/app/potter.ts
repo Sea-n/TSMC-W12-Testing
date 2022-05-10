@@ -33,17 +33,12 @@ export class Potter {
     titles[4] += comb * 2;
     titles[5] -= comb;
 
-    for (let cnt=1; cnt<=5; cnt++) {
-      while (titles[cnt as keyof Count] --> 0) {
-        switch (cnt) {
-          case 1: sum += 8 * 1 * 1.0; break;
-          case 2: sum += 8 * 2 * 0.95; break;
-          case 3: sum += 8 * 3 * 0.9; break;
-          case 4: sum += 8 * 4 * 0.8; break;
-          case 5: sum += 8 * 5 * 0.75; break;
-        }
-      }
-    }
-    return sum;
+    sum += 1 * 1.00 * titles[1];
+    sum += 2 * 0.95 * titles[2];
+    sum += 3 * 0.90 * titles[3];
+    sum += 4 * 0.80 * titles[4];
+    sum += 5 * 0.75 * titles[5];
+
+    return sum * 8;
   }
 }
